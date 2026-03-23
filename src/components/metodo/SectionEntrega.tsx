@@ -6,7 +6,7 @@ export default function SectionEntrega() {
   const { entrega } = metodoContent;
 
   return (
-    <section className="py-24 bg-dark">
+    <section id="section-entrega" className="py-24 bg-dark">
       <Container className="text-center">
         {/* Ícone e texto — um abaixo do outro */}
         <Package size={48} className="text-accent mx-auto mb-6" />

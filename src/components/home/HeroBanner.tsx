@@ -7,7 +7,7 @@ export default function HeroBanner() {
   const { hero } = homeContent;
 
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center bg-dark overflow-hidden">
+    <section id="hero-banner" className="relative w-full min-h-screen flex items-center justify-center bg-dark overflow-hidden">
       {/* Background image */}
       <Image
         src={bannerBg}

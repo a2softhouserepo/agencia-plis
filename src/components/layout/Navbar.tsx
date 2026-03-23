@@ -8,7 +8,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-dark">
+    <header id="navbar" className="fixed top-0 left-0 w-full z-50 bg-dark">
       <nav className="container-giz flex items-center justify-between h-20">
         {/* Links — esquerda */}
         <ul className="flex items-center gap-8">

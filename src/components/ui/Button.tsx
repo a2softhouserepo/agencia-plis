@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 interface ButtonProps {
   text: string;
   href: string;
+  id?: string;
   icon?: boolean;
   variant?: "primary" | "outline";
   className?: string;
@@ -12,6 +13,7 @@ interface ButtonProps {
 export default function Button({
   text,
   href,
+  id,
   icon = true,
   variant = "primary",
   className = "",
@@ -24,7 +26,7 @@ export default function Button({
   };
 
   return (
-    <Link href={href} className={`${base} ${variants[variant]} ${className}`}>
+    <Link id={id} href={href} className={`${base} ${variants[variant]} ${className}`}>
       {icon && <ArrowRight size={18} />}
       {text}
     </Link>

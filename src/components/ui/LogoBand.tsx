@@ -1,8 +1,8 @@
-export default function LogoBand() {
+export default function LogoBand({ id }: { id?: string } = {}) {
   const logos = Array.from({ length: 20 });
 
   return (
-    <div className="w-full overflow-hidden bg-dark py-6">
+    <div id={id} className="w-full overflow-hidden bg-dark py-6">
       <div className="flex items-center gap-12 animate-[scroll_20s_linear_infinite]">
         {logos.map((_, i) => (
           <span

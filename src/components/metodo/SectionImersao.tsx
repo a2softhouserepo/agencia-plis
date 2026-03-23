@@ -5,7 +5,7 @@ export default function SectionImersao() {
   const { imersao } = metodoContent;
 
   return (
-    <section className="py-24 bg-white">
+    <section id="section-imersao" className="py-24 bg-white">
       <Container>
         {/* Título com imagem de background */}
         <div className="relative bg-dark rounded-2xl p-12 mb-16 overflow-hidden">

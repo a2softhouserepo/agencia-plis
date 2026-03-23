@@ -3,7 +3,7 @@ import { siteConfig } from "@/data/content";
 
 export default function Footer() {
   return (
-    <footer className="bg-dark py-8">
+    <footer id="footer" className="bg-dark py-8">
       <div className="container-giz">
         <ul className="flex flex-wrap items-center justify-center gap-8 text-white text-sm font-sora">
           <li>

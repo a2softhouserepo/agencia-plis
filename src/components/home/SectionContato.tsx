@@ -6,7 +6,7 @@ export default function SectionContato() {
   const { contato } = homeContent;
 
   return (
-    <section className="py-24 bg-white">
+    <section id="section-contato" className="py-24 bg-white">
       <Container className="text-center max-w-3xl mx-auto">
         <h2 className="font-archivo text-4xl lg:text-5xl font-bold text-dark mb-6">
           {contato.title}

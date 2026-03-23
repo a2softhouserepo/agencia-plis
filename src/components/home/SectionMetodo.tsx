@@ -7,7 +7,7 @@ export default function SectionMetodo() {
   const { metodo } = homeContent;
 
   return (
-    <section className="py-24 bg-white">
+    <section id="section-metodo" className="py-24 bg-white">
       <Container>
         {/* Titulo à esquerda */}
         <h2 className="font-archivo text-4xl lg:text-5xl font-bold text-dark mb-12 text-left">

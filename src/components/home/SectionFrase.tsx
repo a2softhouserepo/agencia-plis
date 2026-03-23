@@ -6,7 +6,7 @@ export default function SectionFrase() {
   const { frase } = homeContent;
 
   return (
-    <section className="py-24 bg-dark">
+    <section id="section-frase" className="py-24 bg-dark">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Coluna esquerda: frase e links verticais do footer */}

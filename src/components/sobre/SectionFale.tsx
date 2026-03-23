@@ -6,7 +6,7 @@ export default function SectionFale() {
   const { fale } = sobreContent;
 
   return (
-    <section className="py-24 bg-white">
+    <section id="section-fale" className="py-24 bg-white">
       <Container className="text-center">
         <p className="font-archivo text-3xl lg:text-4xl font-bold text-dark leading-tight mb-12">
           {fale.line1}

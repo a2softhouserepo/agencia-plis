@@ -5,7 +5,7 @@ export default function SectionSobre() {
   const { sobreGiz } = sobreContent;
 
   return (
-    <section className="py-24 bg-white">
+    <section id="sobre-giz" className="py-24 bg-white">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Coluna esquerda: título com imagem de background */}

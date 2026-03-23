@@ -6,7 +6,7 @@ export default function HeroContato() {
   const { hero } = contatoContent;
 
   return (
-    <section className="py-24 bg-dark">
+    <section id="hero-contato" className="py-24 bg-dark">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Coluna esquerda: título e textos */}

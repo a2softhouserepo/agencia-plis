@@ -5,7 +5,7 @@ export default function SectionPrincipios() {
   const { principios } = sobreContent;
 
   return (
-    <section className="py-24 bg-dark/5">
+    <section id="section-principios" className="py-24 bg-dark/5">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Coluna esquerda: título ao topo */}

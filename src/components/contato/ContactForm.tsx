@@ -64,7 +64,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section className="py-24 bg-white">
+    <section id="contact-form" className="py-24 bg-white">
       <Container>
         <form onSubmit={handleSubmit} className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
