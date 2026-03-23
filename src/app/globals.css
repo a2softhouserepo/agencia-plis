@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark: #271E55;
+  --color-accent: #C2F628;
+  --color-dark-light: #3a2f6e;
+
+  --font-sora: "Sora", sans-serif;
+  --font-archivo: "Archivo", sans-serif;
+}
+
+/* Archivo Expanded via font-stretch */
+.font-archivo {
+  font-family: var(--font-archivo);
+  font-stretch: expanded;
+}
+
+/* Main container */
+.container-giz {
+  max-width: 1644px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Scrollbar styling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove default focus outlines and add custom */
+*:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
