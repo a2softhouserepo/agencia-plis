@@ -6,20 +6,20 @@
 export const siteConfig = {
   name: "GIZ",
   fullName: "Agência GIZ",
-  phone: "(00) 00000-0000",
-  email: "contato@giz.online",
-  location: "São Paulo, SP",
+  phone: "(11) 93717-2922",
+  email: "contato@agenciaplis.com.br",
+  location: "São Paulo - SP",
   instagram: {
-    handle: "@agenciagiz",
-    hashtag: "#agenciagiz",
-    url: "https://instagram.com/agenciagiz",
+    handle: "@ag.plis",
+    hashtag: "#meajudaaíplis",
+    url: "https://instagram.com/ag.plis",
   },
 };
 
 export const navLinks = [
   { label: "Home", href: "/" },
   { label: "Nosso Método", href: "/nosso-metodo" },
-  { label: "Soluções", href: "/solucoes" },
+  { label: "Soluções", href: "/sobre" },
   { label: "Sobre a GIZ", href: "/sobre" },
   { label: "Contato", href: "/contato" },
 ];

@@ -1,15 +1,23 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { navLinks } from "@/data/content";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
   const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 0);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header id="navbar" className={styles.header}>
+    <header id="navbar" className={`${styles.header}${scrolled ? ` ${styles.headerScrolled}` : ""}`}>
       <nav className={`container-giz ${styles.nav}`}>
         {/* Logo — esquerda */}
         <Link href="/" className={styles.logo}>

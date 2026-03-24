@@ -6,12 +6,27 @@
   height: 208px;
   z-index: 50;
   background-color: var(--color-dark);
+  transition: height 0.3s ease;
+}
+
+.headerScrolled {
+  height: 120px;
+}
+
+.logo svg {
+  transition: height 0.3s ease, width 0.3s ease;
+}
+
+.headerScrolled .logo svg {
+  height: 65px;
+  width: auto;
 }
 
 .nav {
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 100%;
 }
 
@@ -19,7 +34,6 @@
   display: flex;
   align-items: center;
   gap: 77px;
-  margin: 0 auto;
 }
 
 .link {

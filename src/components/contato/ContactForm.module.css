@@ -1,5 +1,5 @@
 .section {
-  padding: 6rem 0;
+  /* padding: 6rem 0; */
 }
 
 .form {
@@ -28,7 +28,8 @@
 .label {
   font-family: var(--font-archivo);
   font-stretch: expanded;
-  font-weight: 600;
+  font-weight: 400;
+  font-size: 1.5rem;
   color: var(--color-dark);
 }
 
@@ -36,7 +37,7 @@
   width: 100%;
   padding: 1rem 1.5rem;
   border-radius: 0;
-  border: 2px solid var(--color-dark);
+  border: 2px solid var(--color-dark-ultra-light);
   background-color: transparent;
   color: var(--color-dark);
   outline: none;
@@ -45,7 +46,6 @@
 
 .input:hover {
   border-color: var(--color-dark-lightest);
-  background-color: #fff;
 }
 
 .input:not(:placeholder-shown) {
@@ -61,7 +61,8 @@
 .messageLabel {
   font-family: var(--font-archivo);
   font-stretch: expanded;
-  font-weight: 600;
+  font-weight: 400;
+  font-size: 1.5rem;
   color: var(--color-dark);
 }
 
@@ -69,7 +70,7 @@
   width: 100%;
   padding: 1rem 1.5rem;
   border-radius: 0;
-  border: 2px solid var(--color-dark);
+  border: 2px solid var(--color-dark-ultra-light);
   background-color: transparent;
   color: var(--color-dark);
   outline: none;
@@ -81,7 +82,6 @@
 
 .textarea:hover {
   border-color: var(--color-dark-lightest);
-  background-color: #fff;
 }
 
 .textarea:not(:placeholder-shown) {
@@ -96,23 +96,43 @@
 
 .checkboxWrap {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.75rem;
   margin-bottom: 2rem;
 }
 
 .checkbox {
-  margin-top: 0.25rem;
-  height: 1.25rem;
-  width: 1.25rem;
+  appearance: none;
+  -webkit-appearance: none;
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
   border-radius: 0.25rem;
-  accent-color: var(--color-accent);
+  background-color: var(--color-dark-ultra-light);
+  border: 2px solid var(--color-dark-ultra-light);
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 3px;
+  width: 9px;
+  height: 12px;
+  border: 2.5px solid var(--color-accent);
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
 }
 
 .checkboxLabel {
-  color: rgba(39, 30, 85, 0.7);
-  font-size: 0.875rem;
+  color: var(--color-dark);
+  font-family: var(--font-sora);
+  font-size: 1.25rem;
   cursor: pointer;
+  line-height: 1.4;
 }
 
 .submitBtn {
