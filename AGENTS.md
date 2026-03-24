@@ -10,7 +10,7 @@ Guidance for AI coding agents (GitHub Copilot, Cursor, Claude, etc.) working in 
 | ------------ | ----------------------------------- | ------- |
 | Framework    | Next.js App Router                  | 15.x    |
 | Language     | TypeScript (strict)                 | 5.7     |
-| Styling      | Tailwind CSS v4 (CSS-first config)  | 4.x     |
+| Styling      | CSS Modules + CSS Custom Properties | —       |
 | Icons        | Lucide React                        | 0.474   |
 | Email        | NodeMailer (Gmail SMTP)             | 6.x     |
 | Deploy       | Vercel                              | —       |
@@ -28,7 +28,10 @@ src/
 │   ├── nosso-metodo/page.tsx  # /nosso-metodo
 │   ├── contato/page.tsx       # /contato
 │   ├── api/contact/route.ts   # POST endpoint — NodeMailer
-│   └── globals.css            # Tailwind @import + @theme tokens + .container-giz
+│   └── globals.css            # CSS reset + design tokens (:root) + .container-giz
+├── assets/                    # Static images imported via next/image (src imports)
+│   ├── banner-hero-bg.jpg
+│   └── contato-falante.png
 ├── components/
 │   ├── layout/                # Navbar, Footer, FooterVertical, Container
 │   ├── ui/                    # Shared UI: Button, LogoBand
@@ -48,6 +51,7 @@ src/
 
 ### File Naming
 - **Components:** PascalCase — `SectionMetodo.tsx`, `HeroBanner.tsx`
+- **CSS Modules:** Same name as component — `SectionMetodo.module.css`, `HeroBanner.module.css`
 - **Pages/Routes:** `page.tsx` inside folder (App Router)
 - **Utilities:** camelCase — `mail.ts`, `content.ts`
 
@@ -60,36 +64,48 @@ src/
 - **Never hardcode text in component files.** All copy must be in `src/data/content.ts`
 - Export typed objects (`siteConfig`, `homeContent`, `sobreContent`, etc.)
 - Import content at the component level: `import { homeContent } from "@/data/content"`
+- Content strings may contain **HTML markup** (e.g. `<br>`, `<span>`) — components render them via `dangerouslySetInnerHTML={{ __html: ... }}`
 
-### Styling (Tailwind v4)
+### Styling (CSS Modules + Custom Properties)
 
-> This project uses **Tailwind CSS v4** with the CSS-first config in `src/app/globals.css`.
-> There is **no `tailwind.config.ts`** — design tokens are declared with `@theme` inside the CSS file.
+> This project uses **CSS Modules** (`.module.css` files) for component-level styling and **CSS Custom Properties** declared in `src/app/globals.css` as design tokens.
+> There is **no Tailwind CSS** — it was fully removed from the project.
 
-**Design tokens (use these classes, never raw hex values):**
+**Design tokens (defined in `:root` in `globals.css`, use via `var(--token)` in CSS Modules):**
 
-| Class         | Value     | Usage                            |
-| ------------- | --------- | -------------------------------- |
-| `bg-dark`     | `#271E55` | Navbar, dark section backgrounds |
-| `text-dark`   | `#271E55` | Body text                        |
-| `bg-accent`   | `#C2F628` | Icons, highlights                 |
-| `text-accent` | `#C2F628` | Accent text                       |
-| `bg-button`   | `#B3DB3C` | Buttons only                      |
-| `text-button` | `#B3DB3C` | Button text/border (outline)      |
-| `font-sora`   | Sora      | Body text, buttons               |
-| `font-archivo`| Archivo   | Headings, menu links             |
+| CSS Variable              | Value     | Usage                                |
+| ------------------------- | --------- | ------------------------------------ |
+| `--color-dark`            | `#271E55` | Navbar, dark section backgrounds     |
+| `--color-dark-light`      | `#3a2f6e` | Checkbox bg, subtle dark elements    |
+| `--color-dark-lightest`   | `#602E9E` | Input hover borders                  |
+| `--color-dark-ultra-light`| `#8948D9` | Input default borders                |
+| `--color-accent`          | `#C2F628` | Icons, highlights, checked states    |
+| `--color-button`          | `#B3DB3C` | Buttons                              |
+| `--font-sora`             | Sora      | Body text, buttons                   |
+| `--font-archivo`          | Archivo   | Headings, menu links                 |
 
-**Container:** Always use `<Container>` component from `@/components/layout/Container` instead of writing `max-w-*` manually for page sections.
+**Container:** Always use `<Container>` component from `@/components/layout/Container` (renders `.container-giz` — `max-width: 1860px`) instead of writing max-width manually.
 
-**Tailwind v4 syntax differences (important):**
-- Use `bg-linear-to-b` instead of `bg-gradient-to-b`
-- Arbitrary values: prefer Tailwind scale equivalents (`min-h-75` over `min-h-[300px]`)
-- No `tailwind.config.ts` — extend tokens in `globals.css` `@theme {}` block
+**Styling rules:**
+- One `.module.css` file per component — import as `import styles from "./Component.module.css"`
+- Use `var(--color-dark)`, `var(--color-accent)`, etc. — never raw hex values in CSS Modules
+- Use `var(--font-sora)`, `var(--font-archivo)` for `font-family`
+- Global base styles (reset, focus, container) live in `globals.css` only
 
 ### Typography
-- Headings: `font-archivo` with `font-stretch: expanded` (Archivo variable font)
-- Body / buttons: `font-sora`
+- Headings: `var(--font-archivo)` with `font-stretch: expanded` (Archivo variable font)
+- Body / buttons: `var(--font-sora)`
 - Both fonts are loaded via `next/font/google` in `src/app/layout.tsx` with CSS variables `--font-sora` and `--font-archivo`
+
+---
+
+## Navbar Behavior
+
+- **Fixed** at the top of the viewport (`position: fixed`, `z-index: 50`)
+- **Default height:** 208px — **Scrolled height:** 120px (animated with `transition: height 0.3s ease`)
+- Logo SVG also scales down on scroll via CSS transition
+- The scroll state is managed with a `useState` + `useEffect` listener in `Navbar.tsx` (`"use client"`)
+- All pages have `padding-top: 208px` on `<main>` (set in `globals.css`) to offset the fixed header
 
 ---
 
@@ -104,6 +120,7 @@ src/
 
 - **Footer is NOT in `layout.tsx`** — it's included manually in pages that need it
 - **`<LogoBand />`** appears between sections 02 and 03 on Home and Nosso Método pages
+- **`/contato`** page uses the class `page-contato` (bg `#ECECE2`) set in layout
 
 ---
 
@@ -137,12 +154,19 @@ Never access `process.env` outside of `src/lib/mail.ts` and `src/app/api/`.
 
 ---
 
-## Image Placeholders
+## Images / Assets
 
-All images are placeholders via `https://placehold.co`. When replacing with real assets:
-1. Place image files in `public/images/<page>/`
-2. Update the `src` in the relevant component
-3. `next/image` is already used everywhere — keep using it
+Images are stored in `src/assets/` and imported directly in components (Next.js handles optimization):
+
+```tsx
+import bannerBg from "@/assets/banner-hero-bg.jpg";
+<Image src={bannerBg} alt="..." />
+```
+
+When adding new images:
+1. Place the file in `src/assets/`
+2. Import it in the component with a static import
+3. Use `next/image` `<Image>` component
 
 ---
 
@@ -152,6 +176,7 @@ To add or edit text on any page:
 1. Edit `src/data/content.ts` only
 2. The component will automatically reflect the change
 3. Do not add new text fields directly in component files
+4. HTML markup (`<br>`, `<span>`, etc.) is supported — rendered via `dangerouslySetInnerHTML`
 
 ---
 
@@ -159,10 +184,11 @@ To add or edit text on any page:
 
 1. Create `src/app/<route>/page.tsx`
 2. Create section components in `src/components/<route>/`
-3. Add content to `src/data/content.ts`
-4. Add the link to `navLinks` in `src/data/content.ts`
-5. Add `export const metadata` in the page file
-6. If the page needs a footer, add `<Footer />` as the last JSX element
+3. Create corresponding `.module.css` files for each component
+4. Add content to `src/data/content.ts`
+5. Add the link to `navLinks` in `src/data/content.ts`
+6. Add `export const metadata` in the page file
+7. If the page needs a footer, add `<Footer />` as the last JSX element
 
 ---
 
@@ -179,10 +205,12 @@ npm start        # Run production build locally
 
 ## What NOT to Do
 
-- ❌ Don't hardcode colors as hex — use `bg-dark`, `text-accent`, etc.
-- ❌ Don't add `tailwind.config.ts` — config lives in `globals.css`
+- ❌ Don't hardcode colors as hex — use `var(--color-dark)`, `var(--color-accent)`, etc.
+- ❌ Don't add Tailwind CSS — the project uses CSS Modules
+- ❌ Don't write inline styles — use CSS Modules
 - ❌ Don't add `"use client"` to components that don't need it
 - ❌ Don't put site copy directly in JSX — always use `src/data/content.ts`
 - ❌ Don't access env vars outside `src/lib/` and `src/app/api/`
 - ❌ Don't skip input validation / HTML sanitization in the API route
 - ❌ Don't add `<Footer />` to `layout.tsx` — only to individual pages
+- ❌ Don't put images in `public/` — use `src/assets/` with static imports
