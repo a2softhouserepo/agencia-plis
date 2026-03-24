@@ -11,9 +11,7 @@ export default function SectionMetodo() {
     <section id="section-metodo" className={styles.section}>
       <Container>
         {/* Titulo à esquerda */}
-        <h2 className={styles.title}>
-          {metodo.title}
-        </h2>
+        <h2 className={styles.title} dangerouslySetInnerHTML={{ __html: metodo.title }} />
 
         {/* Imagem centralizada */}
         <div className={styles.imageWrap}>
@@ -27,9 +25,7 @@ export default function SectionMetodo() {
         </div>
 
         {/* Texto parágrafo */}
-        <p className={styles.paragraph}>
-          {metodo.paragraph}
-        </p>
+        <p className={styles.paragraph} dangerouslySetInnerHTML={{ __html: metodo.paragraph }} />
 
         {/* Lista — três textos centralizados */}
         <ul className={styles.list}>
@@ -39,7 +35,7 @@ export default function SectionMetodo() {
               className={styles.listItem}
             >
               <span className={styles.dot} />
-              {item}
+              <span dangerouslySetInnerHTML={{ __html: item }} />
             </li>
           ))}
         </ul>

@@ -71,53 +71,67 @@ export default function ContactForm() {
           <div className={styles.fieldGrid}>
             {/* Coluna esquerda: campos */}
             <div className={styles.fields}>
-              <input
-                type="text"
-                name="name"
-                required
-                placeholder={form.namePlaceholder}
-                value={formData.name}
-                onChange={handleChange}
-                className={styles.input}
-              />
-              <input
-                type="text"
-                name="company"
-                required
-                placeholder={form.companyPlaceholder}
-                value={formData.company}
-                onChange={handleChange}
-                className={styles.input}
-              />
-              <input
-                type="email"
-                name="email"
-                required
-                placeholder={form.emailPlaceholder}
-                value={formData.email}
-                onChange={handleChange}
-                className={styles.input}
-              />
-              <input
-                type="tel"
-                name="phone"
-                required
-                placeholder={form.phonePlaceholder}
-                value={formData.phone}
-                onChange={handleChange}
-                className={styles.input}
-              />
+              <div className={styles.fieldWrap}>
+                <label htmlFor="name" className={styles.label} dangerouslySetInnerHTML={{ __html: form.nameLabel }} />
+                <input
+                  id="name"
+                  type="text"
+                  name="name"
+                  required
+                  placeholder=""
+                  value={formData.name}
+                  onChange={handleChange}
+                  className={styles.input}
+                />
+              </div>
+              <div className={styles.fieldWrap}>
+                <label htmlFor="company" className={styles.label} dangerouslySetInnerHTML={{ __html: form.companyLabel }} />
+                <input
+                  id="company"
+                  type="text"
+                  name="company"
+                  required
+                  placeholder=""
+                  value={formData.company}
+                  onChange={handleChange}
+                  className={styles.input}
+                />
+              </div>
+              <div className={styles.fieldWrap}>
+                <label htmlFor="email" className={styles.label} dangerouslySetInnerHTML={{ __html: form.emailLabel }} />
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  required
+                  placeholder=""
+                  value={formData.email}
+                  onChange={handleChange}
+                  className={styles.input}
+                />
+              </div>
+              <div className={styles.fieldWrap}>
+                <label htmlFor="phone" className={styles.label} dangerouslySetInnerHTML={{ __html: form.phoneLabel }} />
+                <input
+                  id="phone"
+                  type="tel"
+                  name="phone"
+                  required
+                  placeholder=""
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className={styles.input}
+                />
+              </div>
             </div>
 
             {/* Coluna direita: textarea */}
-            <div>
-              <label className={styles.messageLabel}>
-                {form.messageLabel}
-              </label>
+            <div className={styles.fieldWrap}>
+              <label className={styles.messageLabel} dangerouslySetInnerHTML={{ __html: form.messageLabel }} />
               <textarea
                 name="message"
                 required
-                placeholder={form.messagePlaceholder}
+                placeholder=""
                 value={formData.message}
                 onChange={handleChange}
                 rows={10}
@@ -137,9 +151,7 @@ export default function ContactForm() {
               required
               className={styles.checkbox}
             />
-            <label htmlFor="consent" className={styles.checkboxLabel}>
-              {form.checkbox}
-            </label>
+            <label htmlFor="consent" className={styles.checkboxLabel} dangerouslySetInnerHTML={{ __html: form.checkbox }} />
           </div>
 
           {/* Botão enviar */}
@@ -153,15 +165,15 @@ export default function ContactForm() {
             ) : (
               <ArrowRight size={18} />
             )}
-            {form.submit}
+            <span dangerouslySetInnerHTML={{ __html: form.submit }} />
           </button>
 
           {/* Mensagens de status */}
           {status === "success" && (
-            <p className={styles.successMsg}>{form.success}</p>
+            <p className={styles.successMsg} dangerouslySetInnerHTML={{ __html: form.success }} />
           )}
           {status === "error" && (
-            <p className={styles.errorMsg}>{form.error}</p>
+            <p className={styles.errorMsg} dangerouslySetInnerHTML={{ __html: form.error }} />
           )}
         </form>
       </Container>

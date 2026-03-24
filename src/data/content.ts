@@ -18,8 +18,9 @@ export const siteConfig = {
 
 export const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Sobre a GIZ", href: "/sobre" },
   { label: "Nosso Método", href: "/nosso-metodo" },
+  { label: "Soluções", href: "/solucoes" },
+  { label: "Sobre a GIZ", href: "/sobre" },
   { label: "Contato", href: "/contato" },
 ];
 
@@ -215,23 +216,26 @@ export const metodoContent = {
 
 export const contatoContent = {
   hero: {
-    title: "Vamos construir algo grande juntos?",
+    title: "Seu objetivo <br />é o começo da<br /> <span>nossa estratégia.</span>",
     texts: [
-      "Preencha o formulário abaixo e nossa equipe entrará em contato o mais rápido possível.",
-      "Se preferir, entre em contato diretamente pelos nossos canais.",
+      "Cada marca tem um desafio. A nossa função é entender o seu e transformá-lo em resultado.",
+      "<b>Preencha o formulário ou fale diretamente com o nosso time.</b> Vamos mergulhar juntos na próxima grande história da sua marca.",
     ],
   },
   form: {
+    nameLabel: "Nome",
+    companyLabel: "Empresa",
+    emailLabel: "E-mail",
+    phoneLabel: "Telefone / WhatsApp",
     namePlaceholder: "Seu nome",
     companyPlaceholder: "Nome da empresa",
     emailPlaceholder: "Seu e-mail",
     phonePlaceholder: "Seu telefone",
     messagePlaceholder: "Conte-nos sobre seu projeto...",
-    messageLabel: "Mensagem",
-    checkbox:
-      "Concordo com o envio dos meus dados para que a equipe GIZ entre em contato.",
-    submit: "Enviar mensagem",
+    messageLabel: "O que sua marca precisa neste momento?",
+    checkbox: "Ao selecionar esta caixa e enviar seus dados, você nos autoriza a te enviar e-mail. Você pode cancear a qualquer momento.",
+    submit: "Bóra!",
     success: "Mensagem enviada com sucesso! Entraremos em contato em breve.",
-    error: "Ocorreu um erro ao enviar. Tente novamente.",
+    error: "Ocorreu um erro ao enviar. Tente novamente em alguns instantes.",
   },
 };

@@ -6,6 +6,7 @@
   --color-accent: #C2F628;
   --color-button: #B3DB3C;
   --color-dark-light: #3a2f6e;
+  --color-dark-lightest: #602E9E;
 }
 
 /* ===========================
@@ -34,7 +35,11 @@ body {
 }
 
 main {
-  padding-top: 5rem;
+  padding-top: 208px;
+}
+
+.page-contato {
+  background-color: #ECECE2;
 }
 
 img,
@@ -74,7 +79,7 @@ ol {
    Container
    =========================== */
 .container-giz {
-  max-width: 1644px;
+  max-width: 1860px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.5rem;

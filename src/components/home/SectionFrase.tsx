@@ -13,9 +13,9 @@ export default function SectionFrase() {
           {/* Coluna esquerda: frase e links verticais do footer */}
           <div>
             <p className={styles.phrase}>
-              {frase.line1}
+              <span dangerouslySetInnerHTML={{ __html: frase.line1 }} />
               <br />
-              <span className={styles.accent}>{frase.line2}</span>
+              <span className={styles.accent} dangerouslySetInnerHTML={{ __html: frase.line2 }} />
             </p>
             <FooterVertical />
           </div>

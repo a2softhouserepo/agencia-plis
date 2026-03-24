@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function SobrePage() {
   return (
-    <>
+    <main id="page-sobre" className="page-sobre">
       {/* Sessão 01: Imagem */}
       <SectionImagem />
 
@@ -28,6 +28,6 @@ export default function SobrePage() {
 
       {/* Sessão 05: Rodapé */}
       <Footer />
-    </>
+    </main>
   );
 }

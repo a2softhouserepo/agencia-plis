@@ -13,7 +13,7 @@ export default function Footer() {
               className={styles.itemLink}
             >
               <Phone size={16} className={styles.icon} />
-              {siteConfig.phone}
+              <span dangerouslySetInnerHTML={{ __html: siteConfig.phone }} />
             </a>
           </li>
           <li>
@@ -22,13 +22,13 @@ export default function Footer() {
               className={styles.itemLink}
             >
               <Mail size={16} className={styles.icon} />
-              {siteConfig.email}
+              <span dangerouslySetInnerHTML={{ __html: siteConfig.email }} />
             </a>
           </li>
           <li>
             <span className={styles.itemText}>
               <MapPin size={16} className={styles.icon} />
-              {siteConfig.location}
+              <span dangerouslySetInnerHTML={{ __html: siteConfig.location }} />
             </span>
           </li>
           <li>
@@ -39,7 +39,7 @@ export default function Footer() {
               className={styles.itemLink}
             >
               <Instagram size={16} className={styles.icon} />
-              {siteConfig.instagram.handle} | {siteConfig.instagram.hashtag}
+              <span dangerouslySetInnerHTML={{ __html: `${siteConfig.instagram.handle} | ${siteConfig.instagram.hashtag}` }} />
             </a>
           </li>
         </ul>

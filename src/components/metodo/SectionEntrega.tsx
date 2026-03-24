@@ -11,12 +11,8 @@ export default function SectionEntrega() {
       <Container className={styles.inner}>
         {/* Ícone e texto — um abaixo do outro */}
         <Package size={48} className={styles.icon} />
-        <h2 className={styles.title}>
-          {entrega.title}
-        </h2>
-        <p className={styles.text}>
-          {entrega.text}
-        </p>
+        <h2 className={styles.title} dangerouslySetInnerHTML={{ __html: entrega.title }} />
+        <p className={styles.text} dangerouslySetInnerHTML={{ __html: entrega.text }} />
 
         {/* Lista centralizada com cinco tópicos */}
         <ul className={styles.list}>
@@ -26,7 +22,7 @@ export default function SectionEntrega() {
               className={styles.listItem}
             >
               <CheckCircle size={24} className={styles.checkIcon} />
-              {item}
+              <span dangerouslySetInnerHTML={{ __html: item }} />
             </li>
           ))}
         </ul>

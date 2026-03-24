@@ -11,19 +11,15 @@ export default function SectionPrincipios() {
         <div className={styles.grid}>
           {/* Coluna esquerda: título ao topo */}
           <div>
-            <h2 className={styles.title}>
-              {principios.title}
-            </h2>
+            <h2 className={styles.title} dangerouslySetInnerHTML={{ __html: principios.title }} />
           </div>
 
           {/* Coluna direita: lista com quatro tópicos */}
           <div className={styles.listCol}>
             {principios.list.map((item, i) => (
               <div key={i} className={styles.listItem}>
-                <h3 className={styles.listTitle}>
-                  {item.title}
-                </h3>
-                <p className={styles.listText}>{item.text}</p>
+                <h3 className={styles.listTitle} dangerouslySetInnerHTML={{ __html: item.title }} />
+                <p className={styles.listText} dangerouslySetInnerHTML={{ __html: item.text }} />
               </div>
             ))}
           </div>

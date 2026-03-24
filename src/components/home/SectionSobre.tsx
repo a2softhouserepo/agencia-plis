@@ -12,9 +12,7 @@ export default function SectionSobre() {
         <div className={styles.grid}>
           {/* Coluna esquerda: titulo maior e imagem */}
           <div>
-            <h2 className={styles.titleLarge}>
-              {sobre.titleLarge}
-            </h2>
+            <h2 className={styles.titleLarge} dangerouslySetInnerHTML={{ __html: sobre.titleLarge }} />
             <Image
               src="https://placehold.co/600x400/271E55/C2F628?text=Sobre+GIZ"
               alt="Sobre a GIZ"
@@ -26,12 +24,8 @@ export default function SectionSobre() {
 
           {/* Coluna direita: titulo e texto */}
           <div className={styles.rightCol}>
-            <h3 className={styles.titleRight}>
-              {sobre.titleRight}
-            </h3>
-            <p className={styles.text}>
-              {sobre.text}
-            </p>
+            <h3 className={styles.titleRight} dangerouslySetInnerHTML={{ __html: sobre.titleRight }} />
+            <p className={styles.text} dangerouslySetInnerHTML={{ __html: sobre.text }} />
           </div>
         </div>
       </Container>

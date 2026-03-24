@@ -50,7 +50,7 @@ export default function RootLayout({
     <html lang="pt-BR" className={`${sora.variable} ${archivo.variable}`}>
       <body>
         <Navbar />
-        <main>{children}</main>
+        {children}
       </body>
     </html>
   );

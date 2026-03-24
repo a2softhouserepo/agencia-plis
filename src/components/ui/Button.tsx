@@ -24,7 +24,7 @@ export default function Button({
   return (
     <Link id={id} href={href} className={`${styles.base} ${variantClass} ${className}`}>
       {icon && <ArrowRight size={32} />}
-      {text}
+      <span dangerouslySetInnerHTML={{ __html: text }} />
     </Link>
   );
 }

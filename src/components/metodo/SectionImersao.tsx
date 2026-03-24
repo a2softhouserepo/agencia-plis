@@ -11,9 +11,7 @@ export default function SectionImersao() {
         {/* Título com imagem de background */}
         <div className={styles.titleBox}>
           <div className={styles.titleBg} />
-          <h1 className={styles.title}>
-            {imersao.title}
-          </h1>
+          <h1 className={styles.title} dangerouslySetInnerHTML={{ __html: imersao.title }} />
         </div>
 
         {/* Subtítulo — duas linhas */}
@@ -22,16 +20,13 @@ export default function SectionImersao() {
             <p
               key={i}
               className={styles.subtitleLine}
-            >
-              {line}
-            </p>
+              dangerouslySetInnerHTML={{ __html: line }}
+            />
           ))}
         </div>
 
         {/* Texto */}
-        <p className={styles.text}>
-          {imersao.text}
-        </p>
+        <p className={styles.text} dangerouslySetInnerHTML={{ __html: imersao.text }} />
 
         {/* Linha separadora */}
         <hr className={styles.divider} />
@@ -42,9 +37,8 @@ export default function SectionImersao() {
             <p
               key={i}
               className={styles.middleLine}
-            >
-              {line}
-            </p>
+              dangerouslySetInnerHTML={{ __html: line }}
+            />
           ))}
         </div>
 
@@ -52,14 +46,10 @@ export default function SectionImersao() {
         <hr className={styles.divider} />
 
         {/* Título */}
-        <h2 className={styles.bottomTitle}>
-          {imersao.bottomTitle}
-        </h2>
+        <h2 className={styles.bottomTitle} dangerouslySetInnerHTML={{ __html: imersao.bottomTitle }} />
 
         {/* Texto */}
-        <p className={styles.bottomText}>
-          {imersao.bottomText}
-        </p>
+        <p className={styles.bottomText} dangerouslySetInnerHTML={{ __html: imersao.bottomText }} />
       </Container>
     </section>
   );

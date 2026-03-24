@@ -10,9 +10,9 @@ export default function SectionFale() {
     <section id="section-fale" className={styles.section}>
       <Container className={styles.inner}>
         <p className={styles.phrase}>
-          {fale.line1}
+          <span dangerouslySetInnerHTML={{ __html: fale.line1 }} />
           <br />
-          {fale.line2}
+          <span dangerouslySetInnerHTML={{ __html: fale.line2 }} />
         </p>
         <Button text={fale.cta} href="/contato" />
       </Container>

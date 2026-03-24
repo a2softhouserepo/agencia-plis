@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function NossoMetodoPage() {
   return (
-    <>
+    <main id="page-nosso-metodo" className="page-nosso-metodo">
       {/* Sessão 01: Imersão */}
       <SectionImersao />
 
@@ -24,6 +24,6 @@ export default function NossoMetodoPage() {
 
       {/* Sessão 03: Entrega */}
       <SectionEntrega />
-    </>
+    </main>
   );
 }

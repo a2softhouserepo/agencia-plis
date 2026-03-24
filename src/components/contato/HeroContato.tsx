@@ -1,6 +1,7 @@
 import Container from "@/components/layout/Container";
 import { contatoContent } from "@/data/content";
 import Image from "next/image";
+import heroImg from "@/assets/contato-falante.png";
 import styles from "./HeroContato.module.css";
 
 export default function HeroContato() {
@@ -11,27 +12,24 @@ export default function HeroContato() {
       <Container>
         <div className={styles.grid}>
           {/* Coluna esquerda: título e textos */}
-          <div>
-            <h1 className={styles.title}>
-              {hero.title}
-            </h1>
+          <div className={styles.textWrap}>
+            <h1 className={styles.title} dangerouslySetInnerHTML={{ __html: hero.title }} />
             {hero.texts.map((text, i) => (
               <p
                 key={i}
                 className={styles.text}
-              >
-                {text}
-              </p>
+                dangerouslySetInnerHTML={{ __html: text }}
+              />
             ))}
           </div>
 
           {/* Coluna direita: imagem */}
           <div className={styles.imageWrap}>
             <Image
-              src="https://placehold.co/500x500/C2F628/271E55?text=Contato"
+              src={heroImg}
               alt="Entre em contato"
-              width={500}
-              height={500}
+              width={631}
+              height={842}
               className={styles.image}
             />
           </div>

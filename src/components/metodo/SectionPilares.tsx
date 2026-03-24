@@ -18,9 +18,8 @@ export default function SectionPilares() {
               <h2
                 key={i}
                 className={styles.titleLine}
-              >
-                {line}
-              </h2>
+                dangerouslySetInnerHTML={{ __html: line }}
+              />
             ))}
           </div>
         </div>
@@ -28,9 +27,7 @@ export default function SectionPilares() {
         {/* Texto — dois parágrafos */}
         <div className={styles.paragraphs}>
           {pilares.paragraphs.map((p, i) => (
-            <p key={i} className={styles.paragraph}>
-              {p}
-            </p>
+            <p key={i} className={styles.paragraph} dangerouslySetInnerHTML={{ __html: p }} />
           ))}
         </div>
 
@@ -52,16 +49,13 @@ export default function SectionPilares() {
 
               {/* Conteúdo */}
               <div className={styles.cardContent}>
-                <h3 className={styles.cardTitle}>
-                  {card.title}
-                </h3>
+                <h3 className={styles.cardTitle} dangerouslySetInnerHTML={{ __html: card.title }} />
                 {card.paragraphs.map((p, j) => (
                   <p
                     key={j}
                     className={styles.cardText}
-                  >
-                    {p}
-                  </p>
+                    dangerouslySetInnerHTML={{ __html: p }}
+                  />
                 ))}
               </div>
             </article>

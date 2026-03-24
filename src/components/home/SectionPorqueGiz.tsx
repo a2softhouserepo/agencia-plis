@@ -15,9 +15,7 @@ export default function SectionPorqueGiz() {
         <div className={styles.grid}>
           {/* Coluna esquerda: titulo e logo */}
           <div>
-            <h2 className={styles.title}>
-              {porqueGiz.title}
-            </h2>
+            <h2 className={styles.title} dangerouslySetInnerHTML={{ __html: porqueGiz.title }} />
             <span className={styles.logoGiz}>
               GIZ
             </span>
@@ -27,10 +25,8 @@ export default function SectionPorqueGiz() {
           <div className={styles.listCol}>
             {porqueGiz.list.map((item, i) => (
               <div key={i} className={styles.listItem}>
-                <h3 className={styles.listTitle}>
-                  {item.title}
-                </h3>
-                <p className={styles.listText}>{item.text}</p>
+                <h3 className={styles.listTitle} dangerouslySetInnerHTML={{ __html: item.title }} />
+                <p className={styles.listText} dangerouslySetInnerHTML={{ __html: item.text }} />
               </div>
             ))}
           </div>

@@ -9,12 +9,8 @@ export default function SectionContato() {
   return (
     <section id="section-contato" className={styles.section}>
       <Container className={styles.inner}>
-        <h2 className={styles.title}>
-          {contato.title}
-        </h2>
-        <p className={styles.text}>
-          {contato.text}
-        </p>
+        <h2 className={styles.title} dangerouslySetInnerHTML={{ __html: contato.title }} />
+        <p className={styles.text} dangerouslySetInnerHTML={{ __html: contato.text }} />
         <Button text={contato.cta} href="/contato" />
       </Container>
     </section>

@@ -13,18 +13,14 @@ export default function SectionSobre() {
           <div className={styles.titleWrap}>
             <div className={styles.titleBox}>
               <div className={styles.titleBg} />
-              <h2 className={styles.title}>
-                {sobreGiz.title}
-              </h2>
+              <h2 className={styles.title} dangerouslySetInnerHTML={{ __html: sobreGiz.title }} />
             </div>
           </div>
 
           {/* Coluna direita: quatro parágrafos */}
           <div className={styles.paragraphs}>
             {sobreGiz.paragraphs.map((paragraph, i) => (
-              <p key={i} className={styles.paragraph}>
-                {paragraph}
-              </p>
+              <p key={i} className={styles.paragraph} dangerouslySetInnerHTML={{ __html: paragraph }} />
             ))}
           </div>
         </div>

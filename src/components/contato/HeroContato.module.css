@@ -1,6 +1,6 @@
 .section {
-  padding: 6rem 0;
-  background-color: var(--color-dark);
+  padding: 6rem 0 0;
+  /* background-color: var(--color-dark); */
 }
 
 .grid {
@@ -13,27 +13,36 @@
 .title {
   font-family: var(--font-archivo);
   font-stretch: expanded;
-  font-size: 2.25rem;
+  font-size: 5rem;
   font-weight: 700;
-  color: #fff;
-  margin-bottom: 2rem;
+  color: var(--color-dark);
+  margin-bottom: 6rem;
   line-height: 1.25;
+}
+.title span {
+  color: var(--color-dark-lightest);
 }
 
 .text {
-  font-size: 1.125rem;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.5rem;
+  color: var(--color-dark);
   line-height: 1.625;
-  margin-bottom: 1rem;
+  margin-bottom: 1.8rem;
 }
 
 .text:last-child {
   margin-bottom: 0;
 }
 
+.textWrap {
+  width: 52rem;
+  /* margin-left: 3rem; */
+}
+
 .imageWrap {
   display: flex;
   justify-content: center;
+  /* margin-right: 3rem; */
 }
 
 .image {
@@ -46,7 +55,7 @@
   }
 
   .title {
-    font-size: 3rem;
+    font-size: 5rem;
   }
 
   .imageWrap {

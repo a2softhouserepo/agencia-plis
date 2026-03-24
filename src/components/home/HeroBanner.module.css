@@ -1,12 +1,13 @@
 .section {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--color-dark);
   overflow: hidden;
+  padding: 6rem 0 4rem;
 }
 
 .bgImage {
@@ -23,14 +24,14 @@
 }
 
 .title {
-  margin-bottom: 10rem;
+  margin-bottom: 3rem;
 }
 
 .titleLine1 {
   display: block;
   font-family: var(--font-archivo);
   font-stretch: expanded;
-  font-size: 3.75rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--color-dark);
   width: 100%;
@@ -39,7 +40,7 @@
 .titleLine2 {
   display: block;
   font-family: var(--font-sora);
-  font-size: 1.875rem;
+  font-size: 1.25rem;
   font-weight: 600;
   margin-top: 0.5rem;
   width: 100%;
@@ -47,35 +48,30 @@
 }
 
 .subtitle {
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
 }
 
 .subtitleLine {
-  font-size: 1.125rem;
-  line-height: 1.2;
+  font-size: 1rem;
+  line-height: 1.3;
   color: var(--color-dark);
 }
 
 .ctaWrap {
-  position: absolute;
-  bottom: 5rem;
-  left: 0;
-  right: 0;
   display: flex;
   justify-content: center;
-  z-index: 20;
 }
 
 .ctaButton {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 3.625rem 4rem;
+  padding: 1.25rem 2rem;
   border-radius: 9999px;
   border-bottom-right-radius: 0;
   font-family: var(--font-sora);
   font-weight: 400;
-  font-size: 2.25rem;
+  font-size: 1rem;
   letter-spacing: 0.025em;
   transition: all 0.15s;
   background-color: var(--color-button);
@@ -87,7 +83,40 @@
   filter: brightness(1.1);
 }
 
+/* Tablet */
+@media (min-width: 768px) {
+  .title {
+    margin-bottom: 5rem;
+  }
+
+  .titleLine1 {
+    font-size: 3.25rem;
+  }
+
+  .titleLine2 {
+    font-size: 2.25rem;
+  }
+
+  .subtitleLine {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    margin-bottom: 4rem;
+  }
+
+  .ctaButton {
+    padding: 2rem 3rem;
+    font-size: 1.5rem;
+  }
+}
+
+/* Desktop */
 @media (min-width: 1024px) {
+  .title {
+    margin-bottom: 8rem;
+  }
+
   .titleLine1 {
     font-size: 5.3rem;
   }
@@ -98,5 +127,14 @@
 
   .subtitleLine {
     font-size: 3rem;
+  }
+
+  .subtitle {
+    margin-bottom: 5rem;
+  }
+
+  .ctaButton {
+    padding: 3.625rem 4rem;
+    font-size: 2.25rem;
   }
 }

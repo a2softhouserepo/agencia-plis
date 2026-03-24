@@ -9,7 +9,7 @@ import SectionContato from "@/components/home/SectionContato";
 
 export default function HomePage() {
   return (
-    <>
+    <main id="page-home" className="page-home">
       {/* Sessão 01: Banner Hero */}
       <HeroBanner />
 
@@ -33,6 +33,6 @@ export default function HomePage() {
 
       {/* Sessão 07: Contato */}
       <SectionContato />
-    </>
+    </main>
   );
 }

@@ -11,14 +11,10 @@ export default function SectionPilares() {
     <section id="section-pilares" className={styles.section}>
       <Container>
         {/* Titulo à esquerda */}
-        <h2 className={styles.title}>
-          {pilares.title}
-        </h2>
+        <h2 className={styles.title} dangerouslySetInnerHTML={{ __html: pilares.title }} />
 
         {/* Texto à esquerda */}
-        <p className={styles.text}>
-          {pilares.text}
-        </p>
+        <p className={styles.text} dangerouslySetInnerHTML={{ __html: pilares.text }} />
 
         {/* Lista com 6 tópicos */}
         <ul className={styles.grid}>
@@ -30,7 +26,7 @@ export default function SectionPilares() {
               <span className={styles.number}>
                 {i + 1}
               </span>
-              {item}
+              <span dangerouslySetInnerHTML={{ __html: item }} />
             </li>
           ))}
         </ul>

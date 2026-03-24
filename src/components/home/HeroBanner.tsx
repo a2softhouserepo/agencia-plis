@@ -23,30 +23,24 @@ export default function HeroBanner() {
       <div id="hero-content" className={styles.content}>
         {/* Titulo — duas linhas com tamanhos diferentes */}
         <h1 className={styles.title}>
-          <span className={styles.titleLine1}>
-            {hero.titleLine1}
-          </span>
-          <span className={styles.titleLine2}>
-            {hero.titleLine2}
-          </span>
+          <span className={styles.titleLine1} dangerouslySetInnerHTML={{ __html: hero.titleLine1 }} />
+          <span className={styles.titleLine2} dangerouslySetInnerHTML={{ __html: hero.titleLine2 }} />
         </h1>
 
         {/* Subtítulo — três linhas */}
         <div className={styles.subtitle}>
           {hero.subtitleLines.map((line, i) => (
-            <p key={i} className={styles.subtitleLine}>
-              {line}
-            </p>
+            <p key={i} className={styles.subtitleLine} dangerouslySetInnerHTML={{ __html: line }} />
           ))}
         </div>
-      </div>
 
-      {/* Botão CTA — fixado na base do banner */}
-      <div className={styles.ctaWrap}>
-        <Link href="/contato" className={styles.ctaButton}>
-          <ArrowRight size={32} />
-          {hero.cta}
-        </Link>
+        {/* Botão CTA */}
+        <div className={styles.ctaWrap}>
+          <Link href="/contato" className={styles.ctaButton}>
+            <ArrowRight size={32} />
+            <span dangerouslySetInnerHTML={{ __html: hero.cta }} />
+          </Link>
+        </div>
       </div>
     </section>
   );
