@@ -1,0 +1,68 @@
+.section {
+  padding: 6rem 0;
+  background-color: #fff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.titleWrap {
+  position: relative;
+}
+
+.titleBox {
+  position: relative;
+  background-color: var(--color-dark);
+  border-radius: 1rem;
+  padding: 3rem;
+  min-height: 18.75rem;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.titleBg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://placehold.co/600x400/271E55/C2F628?text=BG');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+}
+
+.title {
+  position: relative;
+  z-index: 10;
+  font-family: var(--font-archivo);
+  font-stretch: expanded;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.paragraph {
+  color: rgba(39, 30, 85, 0.7);
+  font-size: 1.125rem;
+  line-height: 1.625;
+  text-align: left;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+}

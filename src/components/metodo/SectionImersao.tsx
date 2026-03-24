@@ -1,26 +1,27 @@
 import Container from "@/components/layout/Container";
 import { metodoContent } from "@/data/content";
+import styles from "./SectionImersao.module.css";
 
 export default function SectionImersao() {
   const { imersao } = metodoContent;
 
   return (
-    <section id="section-imersao" className="py-24 bg-white">
+    <section id="section-imersao" className={styles.section}>
       <Container>
         {/* Título com imagem de background */}
-        <div className="relative bg-dark rounded-2xl p-12 mb-16 overflow-hidden">
-          <div className="absolute inset-0 bg-[url('https://placehold.co/1200x400/271E55/C2F628?text=Imersao')] bg-cover bg-center opacity-20" />
-          <h1 className="relative z-10 font-archivo text-5xl lg:text-6xl font-bold text-white">
+        <div className={styles.titleBox}>
+          <div className={styles.titleBg} />
+          <h1 className={styles.title}>
             {imersao.title}
           </h1>
         </div>
 
         {/* Subtítulo — duas linhas */}
-        <div className="mb-12">
+        <div className={styles.subtitleWrap}>
           {imersao.subtitleLines.map((line, i) => (
             <p
               key={i}
-              className="font-archivo text-2xl lg:text-3xl font-semibold text-dark leading-tight"
+              className={styles.subtitleLine}
             >
               {line}
             </p>
@@ -28,19 +29,19 @@ export default function SectionImersao() {
         </div>
 
         {/* Texto */}
-        <p className="text-lg text-dark/70 leading-relaxed max-w-3xl mb-12">
+        <p className={styles.text}>
           {imersao.text}
         </p>
 
         {/* Linha separadora */}
-        <hr className="border-dark/10 mb-12" />
+        <hr className={styles.divider} />
 
         {/* Texto centralizado — duas linhas */}
-        <div className="text-center mb-12">
+        <div className={styles.middleWrap}>
           {imersao.middleLines.map((line, i) => (
             <p
               key={i}
-              className="font-archivo text-xl lg:text-2xl font-semibold text-dark"
+              className={styles.middleLine}
             >
               {line}
             </p>
@@ -48,15 +49,15 @@ export default function SectionImersao() {
         </div>
 
         {/* Linha separadora */}
-        <hr className="border-dark/10 mb-12" />
+        <hr className={styles.divider} />
 
         {/* Título */}
-        <h2 className="font-archivo text-3xl lg:text-4xl font-bold text-dark mb-6">
+        <h2 className={styles.bottomTitle}>
           {imersao.bottomTitle}
         </h2>
 
         {/* Texto */}
-        <p className="text-lg text-dark/70 leading-relaxed max-w-3xl">
+        <p className={styles.bottomText}>
           {imersao.bottomText}
         </p>
       </Container>

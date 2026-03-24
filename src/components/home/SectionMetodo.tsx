@@ -2,49 +2,50 @@ import Container from "@/components/layout/Container";
 import Button from "@/components/ui/Button";
 import { homeContent } from "@/data/content";
 import Image from "next/image";
+import styles from "./SectionMetodo.module.css";
 
 export default function SectionMetodo() {
   const { metodo } = homeContent;
 
   return (
-    <section id="section-metodo" className="py-24 bg-white">
+    <section id="section-metodo" className={styles.section}>
       <Container>
         {/* Titulo à esquerda */}
-        <h2 className="font-archivo text-4xl lg:text-5xl font-bold text-dark mb-12 text-left">
+        <h2 className={styles.title}>
           {metodo.title}
         </h2>
 
         {/* Imagem centralizada */}
-        <div className="flex justify-center mb-12">
+        <div className={styles.imageWrap}>
           <Image
             src="https://placehold.co/800x400/271E55/C2F628?text=Metodo+GIZ"
             alt="Método GIZ"
             width={800}
             height={400}
-            className="rounded-2xl"
+            className={styles.image}
           />
         </div>
 
         {/* Texto parágrafo */}
-        <p className="text-lg text-dark/70 max-w-3xl mx-auto text-center mb-12 leading-relaxed">
+        <p className={styles.paragraph}>
           {metodo.paragraph}
         </p>
 
         {/* Lista — três textos centralizados */}
-        <ul className="flex flex-col items-center gap-4 mb-12">
+        <ul className={styles.list}>
           {metodo.list.map((item, i) => (
             <li
               key={i}
-              className="flex items-center gap-3 text-dark font-medium"
+              className={styles.listItem}
             >
-              <span className="w-2 h-2 rounded-full bg-accent shrink-0" />
+              <span className={styles.dot} />
               {item}
             </li>
           ))}
         </ul>
 
         {/* Botão centralizado */}
-        <div className="flex justify-center">
+        <div className={styles.buttonWrap}>
           <Button text={metodo.cta} href="/nosso-metodo" />
         </div>
       </Container>

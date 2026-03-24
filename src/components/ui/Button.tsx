@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import styles from "./Button.module.css";
 
 interface ButtonProps {
   text: string;
@@ -18,16 +19,11 @@ export default function Button({
   variant = "primary",
   className = "",
 }: ButtonProps) {
-  const base =
-    "inline-flex items-center gap-2 px-8 py-4 rounded-full font-sora font-semibold text-sm tracking-wide transition-all";
-  const variants = {
-    primary: "bg-accent text-dark hover:brightness-110",
-    outline: "border-2 border-accent text-accent hover:bg-accent hover:text-dark",
-  };
+  const variantClass = variant === "primary" ? styles.primary : styles.outline;
 
   return (
-    <Link id={id} href={href} className={`${base} ${variants[variant]} ${className}`}>
-      {icon && <ArrowRight size={18} />}
+    <Link id={id} href={href} className={`${styles.base} ${variantClass} ${className}`}>
+      {icon && <ArrowRight size={32} />}
       {text}
     </Link>
   );

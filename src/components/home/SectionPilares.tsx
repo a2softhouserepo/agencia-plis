@@ -2,31 +2,32 @@ import Container from "@/components/layout/Container";
 import Button from "@/components/ui/Button";
 import { homeContent } from "@/data/content";
 import Image from "next/image";
+import styles from "./SectionPilares.module.css";
 
 export default function SectionPilares() {
   const { pilares } = homeContent;
 
   return (
-    <section id="section-pilares" className="py-24 bg-white">
+    <section id="section-pilares" className={styles.section}>
       <Container>
         {/* Titulo à esquerda */}
-        <h2 className="font-archivo text-4xl lg:text-5xl font-bold text-dark mb-6 text-left">
+        <h2 className={styles.title}>
           {pilares.title}
         </h2>
 
         {/* Texto à esquerda */}
-        <p className="text-lg text-dark/70 max-w-2xl mb-12 leading-relaxed">
+        <p className={styles.text}>
           {pilares.text}
         </p>
 
         {/* Lista com 6 tópicos */}
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+        <ul className={styles.grid}>
           {pilares.list.map((item, i) => (
             <li
               key={i}
-              className="flex items-center gap-3 text-dark font-medium bg-dark/5 rounded-xl px-6 py-4"
+              className={styles.gridItem}
             >
-              <span className="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-dark font-bold text-sm shrink-0">
+              <span className={styles.number}>
                 {i + 1}
               </span>
               {item}
@@ -35,19 +36,19 @@ export default function SectionPilares() {
         </ul>
 
         {/* Botão com ícone */}
-        <div className="mb-16">
+        <div className={styles.buttonWrap}>
           <Button text={pilares.cta} href="/nosso-metodo#pilares" />
         </div>
       </Container>
 
       {/* Imagem full-width */}
-      <div className="w-full">
+      <div>
         <Image
           src="https://placehold.co/1920x500/271E55/C2F628?text=Pilares+GIZ"
           alt="Os 6 Pilares GIZ"
           width={1920}
           height={500}
-          className="w-full h-auto object-cover"
+          className={styles.fullImage}
         />
       </div>
     </section>

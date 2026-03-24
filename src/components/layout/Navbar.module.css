@@ -1,0 +1,52 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  background-color: var(--color-dark);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5rem;
+}
+
+.linkList {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.link {
+  font-family: var(--font-archivo);
+  font-stretch: expanded;
+  font-size: 0.875rem;
+  letter-spacing: 0.025em;
+  transition: color 0.15s;
+  color: #fff;
+}
+
+.link:hover {
+  color: var(--color-accent);
+}
+
+.linkActive {
+  color: var(--color-accent);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logoText {
+  font-family: var(--font-archivo);
+  font-stretch: expanded;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: 0.05em;
+}

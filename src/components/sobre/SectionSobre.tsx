@@ -1,27 +1,28 @@
 import Container from "@/components/layout/Container";
 import { sobreContent } from "@/data/content";
+import styles from "./SectionSobre.module.css";
 
 export default function SectionSobre() {
   const { sobreGiz } = sobreContent;
 
   return (
-    <section id="sobre-giz" className="py-24 bg-white">
+    <section id="sobre-giz" className={styles.section}>
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className={styles.grid}>
           {/* Coluna esquerda: título com imagem de background */}
-          <div className="relative">
-            <div className="relative bg-dark rounded-2xl p-12 min-h-75 flex items-center overflow-hidden">
-              <div className="absolute inset-0 bg-[url('https://placehold.co/600x400/271E55/C2F628?text=BG')] bg-cover bg-center opacity-20" />
-              <h2 className="relative z-10 font-archivo text-4xl lg:text-5xl font-bold text-white">
+          <div className={styles.titleWrap}>
+            <div className={styles.titleBox}>
+              <div className={styles.titleBg} />
+              <h2 className={styles.title}>
                 {sobreGiz.title}
               </h2>
             </div>
           </div>
 
           {/* Coluna direita: quatro parágrafos */}
-          <div className="space-y-6">
+          <div className={styles.paragraphs}>
             {sobreGiz.paragraphs.map((paragraph, i) => (
-              <p key={i} className="text-dark/70 text-lg leading-relaxed text-left">
+              <p key={i} className={styles.paragraph}>
                 {paragraph}
               </p>
             ))}

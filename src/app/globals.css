@@ -1,36 +1,82 @@
-@import "tailwindcss";
-
-@theme {
+/* ===========================
+   CSS Custom Properties (Design Tokens)
+   =========================== */
+:root {
   --color-dark: #271E55;
   --color-accent: #C2F628;
+  --color-button: #B3DB3C;
   --color-dark-light: #3a2f6e;
-
-  --font-sora: "Sora", sans-serif;
-  --font-archivo: "Archivo", sans-serif;
 }
 
-/* Archivo Expanded via font-stretch */
-.font-archivo {
-  font-family: var(--font-archivo);
-  font-stretch: expanded;
+/* ===========================
+   Reset
+   =========================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Main container */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sora);
+  background-color: #fff;
+  color: var(--color-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+main {
+  padding-top: 5rem;
+}
+
+img,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* ===========================
+   Focus
+   =========================== */
+*:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ===========================
+   Container
+   =========================== */
 .container-giz {
   max-width: 1644px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-}
-
-/* Scrollbar styling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Remove default focus outlines and add custom */
-*:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
 }

@@ -1,0 +1,106 @@
+.section {
+  padding: 6rem 0;
+  background-color: #fff;
+}
+
+.titleBox {
+  position: relative;
+  background-color: var(--color-dark);
+  border-radius: 1rem;
+  padding: 3rem;
+  margin-bottom: 4rem;
+  overflow: hidden;
+}
+
+.titleBg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://placehold.co/1200x400/271E55/C2F628?text=Imersao');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+}
+
+.title {
+  position: relative;
+  z-index: 10;
+  font-family: var(--font-archivo);
+  font-stretch: expanded;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.subtitleWrap {
+  margin-bottom: 3rem;
+}
+
+.subtitleLine {
+  font-family: var(--font-archivo);
+  font-stretch: expanded;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  line-height: 1.25;
+}
+
+.text {
+  font-size: 1.125rem;
+  color: rgba(39, 30, 85, 0.7);
+  line-height: 1.625;
+  max-width: 48rem;
+  margin-bottom: 3rem;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid rgba(39, 30, 85, 0.1);
+  margin-bottom: 3rem;
+}
+
+.middleWrap {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.middleLine {
+  font-family: var(--font-archivo);
+  font-stretch: expanded;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+.bottomTitle {
+  font-family: var(--font-archivo);
+  font-stretch: expanded;
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 1.5rem;
+}
+
+.bottomText {
+  font-size: 1.125rem;
+  color: rgba(39, 30, 85, 0.7);
+  line-height: 1.625;
+  max-width: 48rem;
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 3.75rem;
+  }
+
+  .subtitleLine {
+    font-size: 1.875rem;
+  }
+
+  .middleLine {
+    font-size: 1.5rem;
+  }
+
+  .bottomTitle {
+    font-size: 2.25rem;
+  }
+}

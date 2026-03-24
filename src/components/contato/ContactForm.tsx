@@ -4,6 +4,7 @@ import { useState } from "react";
 import Container from "@/components/layout/Container";
 import { contatoContent } from "@/data/content";
 import { ArrowRight, Loader2 } from "lucide-react";
+import styles from "./ContactForm.module.css";
 
 interface FormData {
   name: string;
@@ -64,12 +65,12 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contact-form" className="py-24 bg-white">
+    <section id="contact-form" className={styles.section}>
       <Container>
-        <form onSubmit={handleSubmit} className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <form onSubmit={handleSubmit} className={styles.form}>
+          <div className={styles.fieldGrid}>
             {/* Coluna esquerda: campos */}
-            <div className="space-y-6">
+            <div className={styles.fields}>
               <input
                 type="text"
                 name="name"
@@ -77,7 +78,7 @@ export default function ContactForm() {
                 placeholder={form.namePlaceholder}
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-6 py-4 rounded-xl border border-dark/20 bg-white text-dark placeholder:text-dark/40 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors"
+                className={styles.input}
               />
               <input
                 type="text"
@@ -86,7 +87,7 @@ export default function ContactForm() {
                 placeholder={form.companyPlaceholder}
                 value={formData.company}
                 onChange={handleChange}
-                className="w-full px-6 py-4 rounded-xl border border-dark/20 bg-white text-dark placeholder:text-dark/40 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors"
+                className={styles.input}
               />
               <input
                 type="email"
@@ -95,7 +96,7 @@ export default function ContactForm() {
                 placeholder={form.emailPlaceholder}
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-6 py-4 rounded-xl border border-dark/20 bg-white text-dark placeholder:text-dark/40 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors"
+                className={styles.input}
               />
               <input
                 type="tel"
@@ -104,13 +105,13 @@ export default function ContactForm() {
                 placeholder={form.phonePlaceholder}
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-6 py-4 rounded-xl border border-dark/20 bg-white text-dark placeholder:text-dark/40 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors"
+                className={styles.input}
               />
             </div>
 
             {/* Coluna direita: textarea */}
             <div>
-              <label className="block font-archivo font-semibold text-dark mb-2">
+              <label className={styles.messageLabel}>
                 {form.messageLabel}
               </label>
               <textarea
@@ -120,13 +121,13 @@ export default function ContactForm() {
                 value={formData.message}
                 onChange={handleChange}
                 rows={10}
-                className="w-full px-6 py-4 rounded-xl border border-dark/20 bg-white text-dark placeholder:text-dark/40 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors resize-none h-full min-h-62.5"
+                className={styles.textarea}
               />
             </div>
           </div>
 
           {/* Checkbox de aceitação */}
-          <div className="flex items-start gap-3 mb-8">
+          <div className={styles.checkboxWrap}>
             <input
               type="checkbox"
               name="consent"
@@ -134,9 +135,9 @@ export default function ContactForm() {
               checked={formData.consent}
               onChange={handleChange}
               required
-              className="mt-1 h-5 w-5 rounded border-dark/20 text-accent focus:ring-accent accent-accent"
+              className={styles.checkbox}
             />
-            <label htmlFor="consent" className="text-dark/70 text-sm cursor-pointer">
+            <label htmlFor="consent" className={styles.checkboxLabel}>
               {form.checkbox}
             </label>
           </div>
@@ -145,10 +146,10 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={status === "sending" || !formData.consent}
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-accent text-dark font-sora font-semibold text-sm tracking-wide transition-all hover:brightness-110 disabled:opacity-50 disabled:cursor-not-allowed"
+            className={styles.submitBtn}
           >
             {status === "sending" ? (
-              <Loader2 size={18} className="animate-spin" />
+              <Loader2 size={18} className={styles.spin} />
             ) : (
               <ArrowRight size={18} />
             )}
@@ -157,10 +158,10 @@ export default function ContactForm() {
 
           {/* Mensagens de status */}
           {status === "success" && (
-            <p className="mt-6 text-green-600 font-medium">{form.success}</p>
+            <p className={styles.successMsg}>{form.success}</p>
           )}
           {status === "error" && (
-            <p className="mt-6 text-red-600 font-medium">{form.error}</p>
+            <p className={styles.errorMsg}>{form.error}</p>
           )}
         </form>
       </Container>

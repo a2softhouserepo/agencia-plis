@@ -48,9 +48,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className={`${sora.variable} ${archivo.variable}`}>
-      <body className="font-sora bg-white text-dark antialiased">
+      <body>
         <Navbar />
-        <main className="pt-20">{children}</main>
+        <main>{children}</main>
       </body>
     </html>
   );

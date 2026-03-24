@@ -1,28 +1,29 @@
 import Container from "@/components/layout/Container";
 import { sobreContent } from "@/data/content";
+import styles from "./SectionPrincipios.module.css";
 
 export default function SectionPrincipios() {
   const { principios } = sobreContent;
 
   return (
-    <section id="section-principios" className="py-24 bg-dark/5">
+    <section id="section-principios" className={styles.section}>
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className={styles.grid}>
           {/* Coluna esquerda: título ao topo */}
           <div>
-            <h2 className="font-archivo text-4xl lg:text-5xl font-bold text-dark">
+            <h2 className={styles.title}>
               {principios.title}
             </h2>
           </div>
 
           {/* Coluna direita: lista com quatro tópicos */}
-          <div className="space-y-8">
+          <div className={styles.listCol}>
             {principios.list.map((item, i) => (
-              <div key={i} className="border-l-4 border-accent pl-6">
-                <h3 className="font-archivo text-xl font-bold text-dark mb-2">
+              <div key={i} className={styles.listItem}>
+                <h3 className={styles.listTitle}>
                   {item.title}
                 </h3>
-                <p className="text-dark/70 leading-relaxed">{item.text}</p>
+                <p className={styles.listText}>{item.text}</p>
               </div>
             ))}
           </div>

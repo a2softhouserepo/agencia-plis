@@ -1,14 +1,15 @@
 import Container from "@/components/layout/Container";
 import Button from "@/components/ui/Button";
 import { sobreContent } from "@/data/content";
+import styles from "./SectionFale.module.css";
 
 export default function SectionFale() {
   const { fale } = sobreContent;
 
   return (
-    <section id="section-fale" className="py-24 bg-white">
-      <Container className="text-center">
-        <p className="font-archivo text-3xl lg:text-4xl font-bold text-dark leading-tight mb-12">
+    <section id="section-fale" className={styles.section}>
+      <Container className={styles.inner}>
+        <p className={styles.phrase}>
           {fale.line1}
           <br />
           {fale.line2}

@@ -1,0 +1,148 @@
+.section {
+  padding: 6rem 0;
+  background-color: #fff;
+}
+
+.form {
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.fieldGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(39, 30, 85, 0.2);
+  background-color: #fff;
+  color: var(--color-dark);
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.input::placeholder {
+  color: rgba(39, 30, 85, 0.4);
+}
+
+.input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 1px var(--color-accent);
+}
+
+.messageLabel {
+  display: block;
+  font-family: var(--font-archivo);
+  font-stretch: expanded;
+  font-weight: 600;
+  color: var(--color-dark);
+  margin-bottom: 0.5rem;
+}
+
+.textarea {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(39, 30, 85, 0.2);
+  background-color: #fff;
+  color: var(--color-dark);
+  outline: none;
+  transition: border-color 0.15s;
+  resize: none;
+  height: 100%;
+  min-height: 15.625rem;
+}
+
+.textarea::placeholder {
+  color: rgba(39, 30, 85, 0.4);
+}
+
+.textarea:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 1px var(--color-accent);
+}
+
+.checkboxWrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.checkbox {
+  margin-top: 0.25rem;
+  height: 1.25rem;
+  width: 1.25rem;
+  border-radius: 0.25rem;
+  accent-color: var(--color-accent);
+}
+
+.checkboxLabel {
+  color: rgba(39, 30, 85, 0.7);
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.submitBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  background-color: var(--color-accent);
+  color: var(--color-dark);
+  font-family: var(--font-sora);
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.025em;
+  transition: all 0.15s;
+  border: none;
+  cursor: pointer;
+}
+
+.submitBtn:hover {
+  filter: brightness(1.1);
+}
+
+.submitBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.successMsg {
+  margin-top: 1.5rem;
+  color: #16a34a;
+  font-weight: 500;
+}
+
+.errorMsg {
+  margin-top: 1.5rem;
+  color: #dc2626;
+  font-weight: 500;
+}
+
+@media (min-width: 1024px) {
+  .fieldGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

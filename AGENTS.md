@@ -72,8 +72,10 @@ src/
 | ------------- | --------- | -------------------------------- |
 | `bg-dark`     | `#271E55` | Navbar, dark section backgrounds |
 | `text-dark`   | `#271E55` | Body text                        |
-| `bg-accent`   | `#C2F628` | Buttons, icons, highlights        |
-| `text-accent` | `#C2F628` | Accent text                      |
+| `bg-accent`   | `#C2F628` | Icons, highlights                 |
+| `text-accent` | `#C2F628` | Accent text                       |
+| `bg-button`   | `#B3DB3C` | Buttons only                      |
+| `text-button` | `#B3DB3C` | Button text/border (outline)      |
 | `font-sora`   | Sora      | Body text, buttons               |
 | `font-archivo`| Archivo   | Headings, menu links             |
 

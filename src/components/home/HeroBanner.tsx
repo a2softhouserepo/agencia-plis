@@ -1,46 +1,52 @@
 import Image from "next/image";
-import Button from "@/components/ui/Button";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { homeContent } from "@/data/content";
 import bannerBg from "@/assets/banner-hero-bg.jpg";
+import styles from "./HeroBanner.module.css";
 
 export default function HeroBanner() {
   const { hero } = homeContent;
 
   return (
-    <section id="hero-banner" className="relative w-full min-h-screen flex items-center justify-center bg-dark overflow-hidden">
+    <section id="hero-banner" className={styles.section}>
       {/* Background image */}
       <Image
         src={bannerBg}
         alt=""
         fill
-        className="object-cover opacity-30"
+        className={styles.bgImage}
         priority
       />
-      <div className="absolute inset-0 bg-linear-to-b from-dark/80 via-dark/60 to-dark/90 z-10" />
 
       {/* Content */}
-      <div className="relative z-20 text-center px-6 max-w-4xl mx-auto">
+      <div id="hero-content" className={styles.content}>
         {/* Titulo — duas linhas com tamanhos diferentes */}
-        <h1 className="mb-8">
-          <span className="block font-archivo text-6xl lg:text-7xl font-bold text-white leading-tight">
+        <h1 className={styles.title}>
+          <span className={styles.titleLine1}>
             {hero.titleLine1}
           </span>
-          <span className="block font-archivo text-3xl lg:text-4xl font-semibold text-accent mt-2">
+          <span className={styles.titleLine2}>
             {hero.titleLine2}
           </span>
         </h1>
 
         {/* Subtítulo — três linhas */}
-        <div className="mb-12">
+        <div className={styles.subtitle}>
           {hero.subtitleLines.map((line, i) => (
-            <p key={i} className="text-lg lg:text-xl text-white/80 leading-relaxed">
+            <p key={i} className={styles.subtitleLine}>
               {line}
             </p>
           ))}
         </div>
+      </div>
 
-        {/* Botão CTA */}
-        <Button text={hero.cta} href="/contato" />
+      {/* Botão CTA — fixado na base do banner */}
+      <div className={styles.ctaWrap}>
+        <Link href="/contato" className={styles.ctaButton}>
+          <ArrowRight size={32} />
+          {hero.cta}
+        </Link>
       </div>
     </section>
   );

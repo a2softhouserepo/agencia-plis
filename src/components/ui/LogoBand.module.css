@@ -1,0 +1,29 @@
+.band {
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--color-dark);
+  padding: 1.5rem 0;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  animation: scroll 20s linear infinite;
+}
+
+.logo {
+  font-family: var(--font-archivo);
+  font-stretch: expanded;
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  white-space: nowrap;
+  opacity: 0.4;
+  user-select: none;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

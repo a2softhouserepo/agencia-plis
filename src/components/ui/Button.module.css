@@ -1,0 +1,33 @@
+.base {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  font-family: var(--font-sora);
+  font-weight: 400;
+  font-size: 0.875rem;
+  letter-spacing: 0.025em;
+  transition: all 0.15s;
+  text-decoration: none;
+}
+
+.primary {
+  background-color: var(--color-button);
+  color: var(--color-dark);
+}
+
+.primary:hover {
+  filter: brightness(1.1);
+}
+
+.outline {
+  border: 2px solid var(--color-button);
+  color: var(--color-button);
+  background: transparent;
+}
+
+.outline:hover {
+  background-color: var(--color-button);
+  color: var(--color-dark);
+}

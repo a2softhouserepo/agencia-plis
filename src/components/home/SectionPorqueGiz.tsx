@@ -1,35 +1,36 @@
 import Container from "@/components/layout/Container";
 import { homeContent } from "@/data/content";
+import styles from "./SectionPorqueGiz.module.css";
 
 export default function SectionPorqueGiz() {
   const { porqueGiz } = homeContent;
 
   return (
-    <section id="section-porque-giz" className="relative py-24 bg-white overflow-hidden">
+    <section id="section-porque-giz" className={styles.section}>
       {/* Imagens de background decorativas */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-accent/10 rounded-full -translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-dark/5 rounded-full translate-x-1/3 translate-y-1/3" />
+      <div className={styles.decoTopLeft} />
+      <div className={styles.decoBottomRight} />
 
-      <Container className="relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+      <Container className={styles.inner}>
+        <div className={styles.grid}>
           {/* Coluna esquerda: titulo e logo */}
           <div>
-            <h2 className="font-archivo text-4xl lg:text-5xl font-bold text-dark mb-12">
+            <h2 className={styles.title}>
               {porqueGiz.title}
             </h2>
-            <span className="font-archivo text-8xl font-bold text-accent/20 select-none">
+            <span className={styles.logoGiz}>
               GIZ
             </span>
           </div>
 
           {/* Coluna direita: lista de 4 tópicos */}
-          <div className="space-y-8">
+          <div className={styles.listCol}>
             {porqueGiz.list.map((item, i) => (
-              <div key={i} className="border-l-4 border-accent pl-6">
-                <h3 className="font-archivo text-xl font-bold text-dark mb-2">
+              <div key={i} className={styles.listItem}>
+                <h3 className={styles.listTitle}>
                   {item.title}
                 </h3>
-                <p className="text-dark/70 leading-relaxed">{item.text}</p>
+                <p className={styles.listText}>{item.text}</p>
               </div>
             ))}
           </div>
