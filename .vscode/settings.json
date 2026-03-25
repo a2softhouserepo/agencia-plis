@@ -1,0 +1,10 @@
+{
+  // Fonte monospace para blocos de código no preview do Markdown
+  "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
+  "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+
+  // Estilo customizado para garantir código monospace no preview
+  "markdown.styles": [
+    ".vscode/markdown-code-fix.css"
+  ]
+}
