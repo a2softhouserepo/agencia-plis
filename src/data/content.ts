@@ -7,6 +7,7 @@ export const siteConfig = {
   name: "GIZ",
   fullName: "Agência GIZ",
   phone: "(11) 93717-2922",
+  whatsapp: "5511937172922",
   email: "contato@agenciaplis.com.br",
   location: "São Paulo - SP",
   instagram: {
@@ -235,7 +236,7 @@ export const contatoContent = {
     messageLabel: "O que sua marca precisa neste momento?",
     checkbox: "Ao selecionar esta caixa e enviar seus dados, você nos autoriza a te enviar e-mail. Você pode cancear a qualquer momento.",
     submit: "Bóra!",
-    success: "Mensagem enviada com sucesso! Entraremos em contato em breve.",
-    error: "Ocorreu um erro ao enviar. Tente novamente em alguns instantes.",
+    success: "Você será redirecionado para o WhatsApp. Caso não abra automaticamente, <a href='https://wa.me/5511937172922' target='_blank' rel='noopener noreferrer'>clique aqui</a>.",
+    error: "Ocorreu um erro ao redirecionar. Tente novamente em alguns instantes.",
   },
 };

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Container from "@/components/layout/Container";
-import { contatoContent } from "@/data/content";
+import { contatoContent, siteConfig } from "@/data/content";
 import { ArrowRight, Loader2 } from "lucide-react";
 import styles from "./ContactForm.module.css";
 
@@ -44,19 +44,21 @@ export default function ContactForm() {
     setStatus("sending");
 
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: formData.name,
-          company: formData.company,
-          email: formData.email,
-          phone: formData.phone,
-          message: formData.message,
-        }),
-      });
+      const lines = [
+        `*Nome:* ${formData.name}`,
+        `*Empresa:* ${formData.company}`,
+        `*E-mail:* ${formData.email}`,
+        `*Telefone:* ${formData.phone}`,
+        "",
+        `*Mensagem:*`,
+        formData.message,
+      ];
 
-      if (!res.ok) throw new Error("Failed to send");
+      const text = encodeURIComponent(lines.join("\n"));
+      const url = `https://wa.me/${siteConfig.whatsapp}?text=${text}`;
+
+      window.open(url, "_blank", "noopener,noreferrer");
+
       setStatus("success");
       setFormData({ name: "", company: "", email: "", phone: "", message: "", consent: false });
     } catch {
