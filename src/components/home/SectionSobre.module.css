@@ -5,7 +5,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: flex-start;
 }
@@ -13,7 +13,7 @@
 .titleLarge {
   font-family: var(--font-archivo);
   font-stretch: expanded;
-  font-size: 3.75rem;
+  font-size: 6rem;
   font-weight: 700;
   color: var(--color-dark);
   margin-bottom: 3rem;
@@ -26,7 +26,7 @@
 }
 
 .rightCol {
-  padding-top: 0;
+  padding-top: 3rem;
 }
 
 .titleRight {
@@ -42,18 +42,4 @@
   font-size: 1.125rem;
   color: rgba(39, 30, 85, 0.7);
   line-height: 1.625;
-}
-
-@media (min-width: 1024px) {
-  .grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .titleLarge {
-    font-size: 6rem;
-  }
-
-  .rightCol {
-    padding-top: 3rem;
-  }
 }

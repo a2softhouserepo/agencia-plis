@@ -5,7 +5,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: flex-start;
 }
@@ -39,7 +39,7 @@
   z-index: 10;
   font-family: var(--font-archivo);
   font-stretch: expanded;
-  font-size: 2.25rem;
+  font-size: 3rem;
   font-weight: 700;
   color: #fff;
 }
@@ -55,14 +55,4 @@
   font-size: 1.125rem;
   line-height: 1.625;
   text-align: left;
-}
-
-@media (min-width: 1024px) {
-  .grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .title {
-    font-size: 3rem;
-  }
 }

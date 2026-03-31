@@ -29,13 +29,13 @@
   font-family: var(--font-archivo);
   font-stretch: expanded;
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   color: var(--color-dark);
 }
 
 .input {
   width: 100%;
-  padding: 1rem 1.5rem;
+  padding: .5rem .8rem;
   border-radius: 0;
   border: 2px solid var(--color-dark-ultra-light);
   background-color: transparent;
@@ -50,25 +50,25 @@
 
 .input:not(:placeholder-shown) {
   border-color: var(--color-dark-light);
-  background-color: #fff;
+  background-color: #ffffffaa;
 }
 
 .input:focus {
   border-color: var(--color-dark);
-  background-color: #fff;
+  background-color: #ffffffaa;
 }
 
 .messageLabel {
   font-family: var(--font-archivo);
   font-stretch: expanded;
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   color: var(--color-dark);
 }
 
 .textarea {
   width: 100%;
-  padding: 1rem 1.5rem;
+  padding: .5rem .8rem;
   border-radius: 0;
   border: 2px solid var(--color-dark-ultra-light);
   background-color: transparent;
@@ -86,12 +86,12 @@
 
 .textarea:not(:placeholder-shown) {
   border-color: var(--color-dark-light);
-  background-color: #fff;
+  background-color: #ffffffaa;
 }
 
 .textarea:focus {
   border-color: var(--color-dark);
-  background-color: #fff;
+  background-color: #ffffffaa;
 }
 
 .checkboxWrap {
@@ -105,11 +105,11 @@
   appearance: none;
   -webkit-appearance: none;
   flex-shrink: 0;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.2rem;
+  height: 1.2rem;
   border-radius: 0.25rem;
-  background-color: var(--color-dark-ultra-light);
-  border: 2px solid var(--color-dark-ultra-light);
+  background-color: var(--color-dark-lightest);
+  border: 0px;
   cursor: pointer;
   position: relative;
 }
@@ -117,10 +117,10 @@
 .checkbox:checked::after {
   content: '';
   position: absolute;
-  left: 6px;
-  top: 3px;
-  width: 9px;
-  height: 12px;
+  left: 5.5px;
+  top: 2.5px;
+  width: 8px;
+  height: 10px;
   border: 2.5px solid var(--color-accent);
   border-top: none;
   border-left: none;
@@ -130,7 +130,7 @@
 .checkboxLabel {
   color: var(--color-dark);
   font-family: var(--font-sora);
-  font-size: 1.25rem;
+  font-size: .9rem;
   cursor: pointer;
   line-height: 1.4;
 }
@@ -173,12 +173,18 @@
 .successMsg {
   margin-top: 1.5rem;
   color: #16a34a;
+  background-color: #dcfce7;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
   font-weight: 500;
 }
 
 .errorMsg {
   margin-top: 1.5rem;
   color: #dc2626;
+  background-color: #fee2e2;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
   font-weight: 500;
 }
 

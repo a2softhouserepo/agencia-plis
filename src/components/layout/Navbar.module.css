@@ -3,14 +3,14 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 208px;
+  height: 148px;
   z-index: 50;
   background-color: var(--color-dark);
   transition: height 0.3s ease;
 }
 
 .headerScrolled {
-  height: 120px;
+  height: 100px;
 }
 
 .logo svg {
@@ -33,14 +33,14 @@
 .linkList {
   display: flex;
   align-items: center;
-  gap: 77px;
+  gap: 55px;
 }
 
 .link {
   font-family: var(--font-archivo);
   font-stretch: expanded;
   font-weight: 400;
-  font-size: 29px;
+  font-size: 20px;
   letter-spacing: 0.025em;
   transition: color 0.15s;
   color: #fff;

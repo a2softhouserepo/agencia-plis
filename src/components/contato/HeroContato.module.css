@@ -5,15 +5,15 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .title {
   font-family: var(--font-archivo);
   font-stretch: expanded;
-  font-size: 5rem;
+  font-size: 3.6rem;
   font-weight: 700;
   color: var(--color-dark);
   margin-bottom: 6rem;
@@ -24,7 +24,7 @@
 }
 
 .text {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   color: var(--color-dark);
   line-height: 1.625;
   margin-bottom: 1.8rem;
@@ -35,7 +35,7 @@
 }
 
 .textWrap {
-  width: 52rem;
+  min-width: 32rem;
   /* margin-left: 3rem; */
 }
 
@@ -47,18 +47,4 @@
 
 .image {
   border-radius: 1rem;
-}
-
-@media (min-width: 1024px) {
-  .grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .title {
-    font-size: 5rem;
-  }
-
-  .imageWrap {
-    justify-content: flex-end;
-  }
 }

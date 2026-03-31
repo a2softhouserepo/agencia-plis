@@ -6,7 +6,7 @@
 .title {
   font-family: var(--font-archivo);
   font-stretch: expanded;
-  font-size: 2.25rem;
+  font-size: 3rem;
   font-weight: 700;
   color: var(--color-dark);
   margin-bottom: 1.5rem;
@@ -23,7 +23,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
   margin-bottom: 3rem;
 }
@@ -61,20 +61,4 @@
   width: 100%;
   height: auto;
   object-fit: cover;
-}
-
-@media (min-width: 768px) {
-  .grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (min-width: 1024px) {
-  .title {
-    font-size: 3rem;
-  }
-
-  .grid {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
 }

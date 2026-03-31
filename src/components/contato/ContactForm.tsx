@@ -68,7 +68,7 @@ export default function ContactForm() {
 
   return (
     <section id="contact-form" className={styles.section}>
-      <Container>
+      <Container size="md">
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.fieldGrid}>
             {/* Coluna esquerda: campos */}

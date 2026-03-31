@@ -18,7 +18,7 @@ export default function Navbar() {
 
   return (
     <header id="navbar" className={`${styles.header}${scrolled ? ` ${styles.headerScrolled}` : ""}`}>
-      <nav className={`container-giz ${styles.nav}`}>
+      <nav className={`container-giz-md ${styles.nav}`}>
         {/* Logo — esquerda */}
         <Link href="/" className={styles.logo}>
           <svg width="133" height="106" viewBox="0 0 133 106" fill="none" xmlns="http://www.w3.org/2000/svg">

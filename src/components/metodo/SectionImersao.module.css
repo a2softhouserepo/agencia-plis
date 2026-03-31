@@ -26,7 +26,7 @@
   z-index: 10;
   font-family: var(--font-archivo);
   font-stretch: expanded;
-  font-size: 3rem;
+  font-size: 3.75rem;
   font-weight: 700;
   color: #fff;
 }
@@ -38,7 +38,7 @@
 .subtitleLine {
   font-family: var(--font-archivo);
   font-stretch: expanded;
-  font-size: 1.5rem;
+  font-size: 1.875rem;
   font-weight: 600;
   color: var(--color-dark);
   line-height: 1.25;
@@ -66,7 +66,7 @@
 .middleLine {
   font-family: var(--font-archivo);
   font-stretch: expanded;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--color-dark);
 }
@@ -74,7 +74,7 @@
 .bottomTitle {
   font-family: var(--font-archivo);
   font-stretch: expanded;
-  font-size: 1.875rem;
+  font-size: 2.25rem;
   font-weight: 700;
   color: var(--color-dark);
   margin-bottom: 1.5rem;
@@ -85,22 +85,4 @@
   color: rgba(39, 30, 85, 0.7);
   line-height: 1.625;
   max-width: 48rem;
-}
-
-@media (min-width: 1024px) {
-  .title {
-    font-size: 3.75rem;
-  }
-
-  .subtitleLine {
-    font-size: 1.875rem;
-  }
-
-  .middleLine {
-    font-size: 1.5rem;
-  }
-
-  .bottomTitle {
-    font-size: 2.25rem;
-  }
 }

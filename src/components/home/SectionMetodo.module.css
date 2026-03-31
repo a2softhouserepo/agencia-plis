@@ -7,7 +7,7 @@
 .title {
   font-family: var(--font-archivo);
   font-stretch: expanded;
-  font-size: 2.25rem;
+  font-size: 3rem;
   font-weight: 700;
   color: #fff;
   margin-bottom: 3rem;
@@ -60,10 +60,4 @@
 .buttonWrap {
   display: flex;
   justify-content: center;
-}
-
-@media (min-width: 1024px) {
-  .title {
-    font-size: 3rem;
-  }
 }

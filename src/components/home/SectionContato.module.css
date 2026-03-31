@@ -12,7 +12,7 @@
 .title {
   font-family: var(--font-archivo);
   font-stretch: expanded;
-  font-size: 2.25rem;
+  font-size: 3rem;
   font-weight: 700;
   color: var(--color-dark);
   margin-bottom: 1.5rem;
@@ -23,10 +23,4 @@
   color: rgba(39, 30, 85, 0.7);
   line-height: 1.625;
   margin-bottom: 3rem;
-}
-
-@media (min-width: 1024px) {
-  .title {
-    font-size: 3rem;
-  }
 }

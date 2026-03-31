@@ -9,7 +9,7 @@ export default function HeroContato() {
 
   return (
     <section id="hero-contato" className={styles.section}>
-      <Container>
+      <Container size="md">
         <div className={styles.grid}>
           {/* Coluna esquerda: título e textos */}
           <div className={styles.textWrap}>
@@ -28,8 +28,8 @@ export default function HeroContato() {
             <Image
               src={heroImg}
               alt="Entre em contato"
-              width={631}
-              height={842}
+              width={449.78}
+              height={600.18}
               className={styles.image}
             />
           </div>
